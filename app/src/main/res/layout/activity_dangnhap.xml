@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="10sp">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:scaleType="fitXY"
+        android:src="@drawable/fpt" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30sp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5sp"
+            android:text="Tên đăng nhập:"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/edinhap"
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:layout_marginBottom="20sp"
+            android:background="@drawable/editdn"
+            android:hint="Nhập usemame"
+            android:padding="10sp"
+
+            android:textColor="@color/black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5sp"
+            android:text="Mật khẩu"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+
+            <EditText
+                android:id="@+id/edipass"
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:background="@drawable/editdn"
+                android:hint="Nhập password"
+                android:inputType="textPassword"
+                android:padding="10sp"
+                android:textColor="@color/black" />
+
+            <ImageView
+                android:id="@+id/mat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="-40sp"
+                android:src="@drawable/matdong" />
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/chkluu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10sp"
+            android:text="Lưu mật khẩu" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="30sp"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btndn"
+                android:layout_width="100sp"
+                android:layout_height="50sp"
+                android:background="@drawable/buttondn"
+                android:text="LOGIN"
+                android:textColor="@color/black"
+                android:layout_marginRight="20sp"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnhuy"
+                android:layout_width="100sp"
+                android:layout_height="50sp"
+                android:background="@drawable/buttondn"
+                android:text="Hủy"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
