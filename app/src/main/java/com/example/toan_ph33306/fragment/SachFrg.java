@@ -8,10 +8,13 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.SimpleAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -33,10 +36,12 @@ import java.util.HashMap;
 public class SachFrg extends Fragment {
 
     RecyclerView rcv;
+    EditText timkiem;
     FloatingActionButton fltaddsach;
     SachDao dao;
     SachAdapter adapter;
-    ArrayList<Sach> list;
+    ArrayList<Sach> list= new ArrayList<>();
+
 
     public SachFrg() {
         // Required empty public constructor
@@ -51,8 +56,14 @@ public class SachFrg extends Fragment {
         View view= inflater.inflate(R.layout.fragment_sach_frg, container, false);
         rcv = view.findViewById(R.id.rcvsach);
         fltaddsach = view.findViewById(R.id.fltaddsach);
+
+
+
+
+
         dao = new SachDao(getContext());
-        ArrayList<Sach> list = dao.getSachAll();
+        list= dao.getSachAll();
+
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         rcv.setLayoutManager(layoutManager);
         adapter = new SachAdapter(list, getContext(), getDSLoaiSach());

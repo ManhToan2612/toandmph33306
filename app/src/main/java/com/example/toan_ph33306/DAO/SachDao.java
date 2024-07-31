@@ -70,4 +70,30 @@ public class SachDao {
         }
     }
 
+    public ArrayList<Sach> getTangdan() {
+        ArrayList<Sach> list = new ArrayList<>();
+        SQLiteDatabase database = dbHelper.getReadableDatabase();
+        Cursor cursor = database.rawQuery("SELECT sc.maSach, sc.tenSach, sc.tienThue, ls.maLoai, ls.tenLoai FROM SACH sc, LOAISACH ls WHERE sc.maLoai = ls.maLoai ORDER BY sc.tienThue ASC", null);
+        if (cursor.getCount() != 0) {
+            cursor.moveToFirst();
+            do {
+                list.add(new Sach(cursor.getInt(0), cursor.getString(1), cursor.getInt(2), cursor.getInt(3), cursor.getString(4)));
+            } while (cursor.moveToNext());
+        }
+        return list;
+    }
+
+    public ArrayList<Sach> getGiamdan() {
+        ArrayList<Sach> list = new ArrayList<>();
+        SQLiteDatabase database = dbHelper.getReadableDatabase();
+        Cursor cursor = database.rawQuery("SELECT sc.maSach, sc.tenSach, sc.tienThue, ls.maLoai, ls.tenLoai FROM SACH sc, LOAISACH ls WHERE sc.maLoai = ls.maLoai ORDER BY sc.tienThue DESC", null);
+        if (cursor.getCount() != 0) {
+            cursor.moveToFirst();
+            do {
+                list.add(new Sach(cursor.getInt(0), cursor.getString(1), cursor.getInt(2), cursor.getInt(3), cursor.getString(4)));
+            } while (cursor.moveToNext());
+        }
+        return list;
+    }
+
 }

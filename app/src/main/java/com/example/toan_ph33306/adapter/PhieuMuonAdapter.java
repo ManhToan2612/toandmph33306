@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -59,6 +60,9 @@ public class PhieuMuonAdapter extends RecyclerView.Adapter<PhieuMuonAdapter.View
 
         holder.txttens.setText(list.get(position).getTenSach());
         holder.txtgiat.setText(String.valueOf(list.get(position).getTienThue()));
+
+
+
         String trangthai = "";
         PhieuMuon pm = list.get(position);
         if(list.get(position).getTrangThai() == 1){
@@ -228,5 +232,7 @@ public class PhieuMuonAdapter extends RecyclerView.Adapter<PhieuMuonAdapter.View
 
         }
     }
+
+
 
 }
